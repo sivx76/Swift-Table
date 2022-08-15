@@ -32,7 +32,7 @@ import UIKit
 }
 
 
-public extension Int: TableData {
+ extension Int: TableData {
      var title: String {
         get {
             "\(self)"
