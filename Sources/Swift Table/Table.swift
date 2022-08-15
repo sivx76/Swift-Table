@@ -183,7 +183,7 @@ import UIKit
     
     // MARK: - Initializers
     /// Builds a placeholder TableView with no initial data.
-    convenience override init() {
+    public convenience override init() {
         let data: [D] = []
         
         self.init(data: data)
@@ -192,7 +192,7 @@ import UIKit
     
     
     /// Builds a TableView with a specific hard-coded Reuse identifier and a specific Frame.
-    convenience init(data: [D]) {
+     public convenience init(data: [D]) {
         let generatedIdentifier: String = "ABCD"
         
         self.init(reuseIdentifier: generatedIdentifier, data: data)
@@ -200,7 +200,7 @@ import UIKit
     
     
     /// Builds a TableView with a specific hard-coded Reuse identifier and a specific Frame.
-    convenience init(datasets: [[D]]) {
+     public convenience init(datasets: [[D]]) {
         let generatedIdentifier: String = "ABCD"
         
         self.init(reuseIdentifier: generatedIdentifier, datasets: datasets)
@@ -211,14 +211,14 @@ import UIKit
     
     
     /// Builds a TableView with a frame of width 400 pixels and height of 800 pixels.
-    convenience init(reuseIdentifier: String, data: [D]) {
+     public convenience init(reuseIdentifier: String, data: [D]) {
         let emptyFrame: CGRect = CGRect(x: 0, y: 20, width: 400, height: 800)
         
         self.init(reuseIdentifier: reuseIdentifier, data: data, frame: emptyFrame)
     }
     
     /// Builds a TableView with a specific hard-coded Reuse identifier and a specific Frame.
-    convenience init(reuseIdentifier: String, datasets: [[D]]) {
+     public convenience init(reuseIdentifier: String, datasets: [[D]]) {
         let emptyFrame: CGRect = CGRect(x: 0, y: 20, width: 400, height: 800)
         
         self.init(reuseIdentifier: reuseIdentifier, datasets: datasets, frame: emptyFrame)
@@ -227,7 +227,7 @@ import UIKit
     
     
     /// Builds a TableView with a specific cellTappedAction() called when each cell is tapped.*
-    required init(reuseIdentifier: String, data: [D], frame: CGRect) {
+     public required init(reuseIdentifier: String, data: [D], frame: CGRect) {
         self.cellTappedAction = { (index, element, cell) -> Void in
             print("Tapped on element: \(element)")
         }
@@ -246,7 +246,7 @@ import UIKit
     
     
     /// Builds a TableView with a specific cellTappedAction() called when each cell is tapped.*
-    required init(reuseIdentifier: String, datasets: [[D]], frame: CGRect) {
+     public required init(reuseIdentifier: String, datasets: [[D]], frame: CGRect) {
         self.cellTappedAction = { (index, element, cell) -> Void in
             print("Tapped on element: \(element)")
         }
@@ -267,7 +267,7 @@ import UIKit
     
     
     /// Builds a TableView with the provided closure called when we tap on each cell.
-    convenience init(reuseIdentifier: String, data: [D], frame: CGRect, action: @escaping (IndexPath, D, UITableViewCell) -> Void) {
+     public convenience init(reuseIdentifier: String, data: [D], frame: CGRect, action: @escaping (IndexPath, D, UITableViewCell) -> Void) {
         self.init(reuseIdentifier: reuseIdentifier, data: data, frame: frame)
         
         self.cellTappedAction = action
@@ -275,7 +275,7 @@ import UIKit
     
     
     /// Builds a TableView with the provided closure called when we tap on each cell.
-    convenience init(reuseIdentifier: String, datasets: [[D]], frame: CGRect, action: @escaping (IndexPath, D, UITableViewCell) -> Void) {
+     public convenience init(reuseIdentifier: String, datasets: [[D]], frame: CGRect, action: @escaping (IndexPath, D, UITableViewCell) -> Void) {
         self.init(reuseIdentifier: reuseIdentifier, datasets: datasets, frame: frame)
         
         self.cellTappedAction = action
