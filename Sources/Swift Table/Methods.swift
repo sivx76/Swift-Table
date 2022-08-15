@@ -7,7 +7,7 @@
 
 import UIKit
 
-extension Table {
+public extension Table {
     
     // MARK: - Public methods - Data
     

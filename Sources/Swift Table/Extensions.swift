@@ -9,7 +9,7 @@ import UIKit
 
 
 // MARK: - Conforming to TableData
-extension String: TableData {
+public extension String: TableData {
      var title: String {
         get {
             self
@@ -32,7 +32,7 @@ extension String: TableData {
 }
 
 
-extension Int: TableData {
+public extension Int: TableData {
      var title: String {
         get {
             "\(self)"
@@ -57,7 +57,7 @@ extension Int: TableData {
 
 
 // MARK: - Utilities
-extension UITableViewCell {
+public extension UITableViewCell {
     func addCheckmark() {
         let cell = self
         
@@ -70,7 +70,7 @@ extension UITableViewCell {
 }
 
 
-extension UIViewController {
+public extension UIViewController {
     func showAlert(title: String, message: String?) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "OK", style:  .cancel, handler: nil  ))
@@ -79,7 +79,7 @@ extension UIViewController {
 }
 
 // To prevent Index out of Error issues with working with multiple Sections and fetching Table Headers
-extension Collection where Indices.Iterator.Element == Index {
+public extension Collection where Indices.Iterator.Element == Index {
     subscript (safe index: Index) -> Iterator.Element? {
         return indices.contains(index) ? self[index] : nil
     }

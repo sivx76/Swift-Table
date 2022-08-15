@@ -1,0 +1,14 @@
+{
+  "pins" : [
+    {
+      "identity" : "swift-table",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/sivx76/Swift-Table.git",
+      "state" : {
+        "branch" : "main",
+        "revision" : "f8510d6a4f9ab0d746e6eb16fbbf9d60f9bb0b3f"
+      }
+    }
+  ],
+  "version" : 2
+}
