@@ -8,7 +8,7 @@ No need to use the UITableViewDelegate and UITableViewDataSource protocols.
 
 Swift Table is a free and open-source library that removes the hundreds of lines of code you need to create a fully-customized TableView.
 
-![Image examples of three TableViews](Other/Screenshots/Collection.jpg)
+![Image examples of three TableViews](https://github.com/sivx76/Swift-Table/blob/main/Other/Screenshots/Collection.png)
 
 
 
