@@ -10,21 +10,21 @@ import UIKit
 
 // MARK: - Conforming to TableData
  extension String: TableData {
-     var title: String {
+     public var title: String {
         get {
             self
         }
     }
 
 
-    var subtitle: String? {
+     public var subtitle: String? {
         get {
             nil
         }
     }
     
     
-    var image: UIImage? {
+     public var image: UIImage? {
         get {
             nil
         }
@@ -33,21 +33,21 @@ import UIKit
 
 
  extension Int: TableData {
-     var title: String {
+     public var title: String {
         get {
             "\(self)"
         }
     }
 
 
-    var subtitle: String? {
+     public var subtitle: String? {
         get {
             nil
         }
     }
     
     
-    var image: UIImage? {
+     public var image: UIImage? {
         get {
             nil
         }
