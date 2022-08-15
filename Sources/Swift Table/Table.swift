@@ -313,7 +313,7 @@ import UIKit
     
     
     // MARK: - Tableview methods
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if numberOfSections > 1 {
             guard let elements = datasets[safe: section] else { return 0 }
             return elements.count
@@ -322,11 +322,11 @@ import UIKit
         }
     }
     
-    func numberOfSections(in tableView: UITableView) -> Int {
+     public func numberOfSections(in tableView: UITableView) -> Int {
         return numberOfSections
     }
     
-    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+     public func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         if numberOfSections > 1 {
             guard let title = titles?[safe: section] else { return "Other" }
             return title
@@ -337,7 +337,7 @@ import UIKit
     
     
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell(style: .subtitle, reuseIdentifier: identifier)
         
         // Determine element
@@ -367,11 +367,11 @@ import UIKit
     }
     
     
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+     public func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return CGFloat(cellHeight)
     }
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+     public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         
         // Determine element
@@ -384,7 +384,7 @@ import UIKit
     }
     
     
-    func tableView(_ tableView: UITableView, accessoryButtonTappedForRowWith indexPath: IndexPath) {
+    public func tableView(_ tableView: UITableView, accessoryButtonTappedForRowWith indexPath: IndexPath) {
         guard let element: D = determineElement(for: indexPath) else { return }
         
         let indexPath: IndexPath = indexPath
