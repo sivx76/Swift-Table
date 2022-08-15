@@ -57,7 +57,7 @@ import UIKit
 ///  ```
 
 
-public class Table<D: TableData>: NSObject, UITableViewDelegate, UITableViewDataSource {
+ class Table<D: TableData>: NSObject, UITableViewDelegate, UITableViewDataSource {
    
     // MARK: - UI Elements
     internal var tableView = UITableView()

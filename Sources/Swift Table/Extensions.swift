@@ -9,7 +9,7 @@ import UIKit
 
 
 // MARK: - Conforming to TableData
-public extension String: TableData {
+ extension String: TableData {
      var title: String {
         get {
             self
