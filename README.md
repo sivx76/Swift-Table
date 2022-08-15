@@ -15,7 +15,7 @@ Swift Table is a free and open-source library that removes the hundreds of lines
 ## Example:
 ``` swift
 var table = Table(data: [“Home”, “Videos”, “Articles”, “Settings”])
-let table = table.show()
+let tableView = table.show()
 view.addSubview(tableView)
 ```
 
