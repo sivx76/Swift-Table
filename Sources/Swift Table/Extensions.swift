@@ -2,7 +2,7 @@
 //  Extensions.swift
 //  Table
 //
-//  Created by Ben Alemu on 8/6/22.
+//  Created by Benyam Alemu Sood on 8/6/22.
 //
 
 import UIKit

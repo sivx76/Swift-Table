@@ -2,7 +2,7 @@
 //  Table.swift
 //  Table
 //
-//  Created by Ben Alemu on 8/6/22.
+//  Created by Benyam Alemu Sood on 8/6/22.
 //
 
 import UIKit
@@ -60,7 +60,7 @@ import UIKit
 class Table<D: TableData>: NSObject, UITableViewDelegate, UITableViewDataSource {
    
     // MARK: - UI Elements
-    private var tableView = UITableView()
+    internal var tableView = UITableView()
     
     
     // MARK: - Variables
@@ -83,75 +83,98 @@ class Table<D: TableData>: NSObject, UITableViewDelegate, UITableViewDataSource 
         }
     }
     
-    private var numberOfSections: Int = 1 {
+    internal var numberOfSections: Int = 1 {
         didSet {
             tableView.reloadData()
         }
     }
 
-    
+    internal var accessoryTappedAction: (IndexPath, D, UITableViewCell) -> Void = { (index, element, cell) -> Void in
+        print("Tapped on accessory of element: \(element)")
+    }
     
     // Initialized properties
-    private var identifier = String()
-    private var frame = CGRect()
+    internal var identifier = String()
+    internal var frame = CGRect()
 
-    private var cellTappedAction: (IndexPath, D, UITableViewCell) -> Void
+    internal var cellTappedAction: (IndexPath, D, UITableViewCell) -> Void
+    
     
     
     
     // Customize appearance
-    private var title: String? = nil {
+    internal var title: String? = nil {
         didSet {
             tableView.reloadData()
         }
     }
     
-    private var titles: [String]? = nil {
+    internal var titles: [String]? = nil {
         didSet {
             tableView.reloadData()
         }
     }
     
-    private var titleFont: UIFont = UIFont.systemFont(ofSize: 16) {
+    internal var titleFont: UIFont = UIFont.systemFont(ofSize: 16) {
         didSet {
             tableView.reloadData()
         }
     }
     
-    private var titleColor: UIColor =  .black {
-        didSet {
-            tableView.reloadData()
-        }
-    }
-    
-    
-    private var subtitleFont: UIFont = UIFont.systemFont(ofSize: 12) {
-        didSet {
-            tableView.reloadData()
-        }
-    }
-    
-    private var subtitleColor: UIColor =  .black {
+    internal var titleColor: UIColor =  .black {
         didSet {
             tableView.reloadData()
         }
     }
     
     
-    private var imageTint: UIColor =  .systemBlue {
+    internal var subtitleFont: UIFont = UIFont.systemFont(ofSize: 12) {
+        didSet {
+            tableView.reloadData()
+        }
+    }
+    
+    internal var subtitleColor: UIColor =  .black {
         didSet {
             tableView.reloadData()
         }
     }
     
     
-    private var cellHeight: Float = 44.0 {
+    internal var imageTint: UIColor =  .systemBlue {
         didSet {
             tableView.reloadData()
         }
     }
     
-    private var accessory: UITableViewCell.AccessoryType = .none {
+    
+    internal var imageFrame: CGRect =  CGRect(x: 0, y: 0, width: 24, height: 24) {
+        didSet {
+            tableView.reloadData()
+        }
+    }
+    
+    internal  var imageContentMode: UIView.ContentMode = .scaleAspectFit {
+        didSet {
+            tableView.reloadData()
+        }
+    }
+    
+    
+    
+    internal var cellHeight: Float = 44.0 {
+        didSet {
+            tableView.reloadData()
+        }
+    }
+    
+    internal var accessory: UITableViewCell.AccessoryType = .none {
+        didSet {
+            tableView.reloadData()
+        }
+    }
+    
+    internal var accessoryColor: UIColor = .systemBlue {
         didSet {
             tableView.reloadData()
         }
@@ -287,136 +310,6 @@ class Table<D: TableData>: NSObject, UITableViewDelegate, UITableViewDataSource 
     }
     
     
-    // MARK: - Public methods - Data
-    
-    /// Add an Element to the end of our ``dataSource``.
-    public func append(element: D) {
-        self.dataSource.append(element)
-    }
-    
-    /// Replace our ``dataSource`` with a new Array.
-    public func setData(data: [D]) {
-        self.dataSource = data
-        self.numberOfSections = 1
-    }
-    
-    
-    /// Replace our ``datasets`` with a new multidimensional Array.
-    public func setDatasets(datasets: [[D]]) {
-        self.datasets = datasets
-        self.numberOfSections = datasets.count
-    }
-    
-    /// Randomize all the elements in our ``dataSource``.
-    public func shuffleElements() {
-        self.dataSource.shuffle()
-        self.datasets.shuffle()
-    }
-    
-    /// Removes all elements from the ``dataSource``.
-    public func removeAllElements() {
-        self.dataSource = []
-        self.datasets = []
-    }
-        
-    
-    
-    
-    // MARK: - Public methods - Appearance
-
-    /// Change the font of titleLabel.
-    public func setTitleFont(font: UIFont) {
-        self.titleFont = font
-    }
-    
-    /// Change the color of the titleLabel.
-    public func setTitleColor(color: UIColor) {
-        self.titleColor = color
-    }
-    
-    /// Change the font of the detailTextLabel.
-    public func setSubtitleFont(font: UIFont) {
-        self.subtitleFont = font
-    }
-    
-    /// Change the color of the detailTextLabel.
-    public func setSubtitleColor(color: UIColor) {
-        self.subtitleColor = color
-    }
-    
-    /// Change the color of system-defined Images in our imageView.
-    public func setImageTint(color: UIColor) {
-        self.imageTint = color
-    }
-    
-    
-    /// Change the Title shown on the top of the TableView.
-    public func setHeader(title: String) {
-        self.title = title
-    }
-    
-    /// Provide the Titles that will be shown for each Section of the TableView.
-    public func setHeader(titles: [String]) {
-        self.titles = titles
-    }
-    
-    /// Add a View pinned to the top of the TableView
-    public func setHeaderView(view: UIView) {
-        self.tableView.tableHeaderView = view
-    }
-    
-    /// Add a View pinned to the bottom of the TableView
-    public func setFooterView(view: UIView) {
-        self.tableView.tableFooterView = view
-    }
-    
-    /// Change the default accessory shown for each cell.
-    public func setAccessory(style: UITableViewCell.AccessoryType) {
-        self.accessory = style
-    }
-    
-    /// Change the height for each row.
-    public func setCellHeight(height: Float) {
-        self.cellHeight = height
-    }
-    
-    /// Change the closure called when each cell is tapped.
-    public func setAction(action: @escaping (IndexPath, D, UITableViewCell) -> Void) {
-        self.cellTappedAction = action
-    }
-    
-    
-    // MARK: - Public methods - Access View
-    
-    /// Outputs the TableView generated by the ``Table`` class.
-    ///
-    /// - Returns: The UITableView created by the Table.
-    func show() -> UITableView {
-        tableView.isHidden = false
-        return tableView
-    }
-    
-    /// Hide the TableView from the View.
-    public func hide() {
-        tableView.isHidden = true
-    }
-    
-    /// Change the Frame or dimensions of the TableView.
-    ///
-    ///  - Parameter frame: Changes the x and y-position, width and height of the TableView.
-    public func setFrame(frame: CGRect) {
-        self.frame = frame
-        tableView.frame = frame
-    }
-    
-    /// Outputs the frame of the TableView.
-    ///
-    ///  - Returns: A rectangle showing the x and y-position, width and height of the TableView.
-    public func showFrame() -> CGRect {
-        return frame
-    }
-    
-    
     
     
     // MARK: - Tableview methods
@@ -443,6 +336,7 @@ class Table<D: TableData>: NSObject, UITableViewDelegate, UITableViewDataSource 
     }
     
     
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell(style: .subtitle, reuseIdentifier: identifier)
         
@@ -462,11 +356,19 @@ class Table<D: TableData>: NSObject, UITableViewDelegate, UITableViewDataSource 
         
         
         cell.imageView?.image = element.image ?? nil
+        cell.imageView?.frame = imageFrame
+        cell.imageView?.contentMode = imageContentMode
         cell.imageView?.tintColor = imageTint
         
         cell.accessoryType = accessory
+        cell.tintColor = accessoryColor
         
         return cell
+    }
+    
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return CGFloat(cellHeight)
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -475,16 +377,19 @@ class Table<D: TableData>: NSObject, UITableViewDelegate, UITableViewDataSource 
         // Determine element
         guard let element: D = determineElement(for: indexPath) else { return }
         
-        
         let indexPath: IndexPath = indexPath
         guard let cell = tableView.cellForRow(at: indexPath) else { return }
         
         cellTappedAction(indexPath, element, cell)
     }
     
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return CGFloat(cellHeight)
+    
+    func tableView(_ tableView: UITableView, accessoryButtonTappedForRowWith indexPath: IndexPath) {
+        guard let element: D = determineElement(for: indexPath) else { return }
+        
+        let indexPath: IndexPath = indexPath
+        guard let cell = tableView.cellForRow(at: indexPath) else { return }
+        
+        accessoryTappedAction(indexPath, element, cell)
     }
 }
-
-

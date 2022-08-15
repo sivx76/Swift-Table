@@ -1,29 +1,33 @@
 //
-//  Person.swift
-//  Table
+//  Weather.swift
+//  Example
 //
-//  Created by Ben Alemu on 8/8/22.
+//  Created by Benyam Alemu Sood on 8/13/22.
 //
+
+import Foundation
 
 import UIKit
 
-struct Person {
+struct Weather {
     let name: String
-    let age: Int
+    let description: String
     let imageSource: String
 }
 
-extension Person: TableData {
+
+extension Weather: TableData {
     var title: String {
-        return name
+        return self.name
     }
     
     var subtitle: String? {
-        return "\(age)"
+        return self.description
     }
     
     var image: UIImage? {
         return UIImage(systemName: imageSource) ?? nil
+
     }
     
 }

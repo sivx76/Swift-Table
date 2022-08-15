@@ -1,0 +1,51 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2639
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\fswiss\fcharset0 Helvetica-Bold;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\margl1440\margr1440\vieww17120\viewh8400\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 For all changes, I recommend you make a 
+\f1\b new branch
+\f0\b0 . We won\'92t approve any commits or PRs made directly to main.\
+\
+Once finished, make a 
+\f1\b pull request (PR) 
+\f0\b0 so your change can be reviewed in our 
+\f1\b staging branch
+\f0\b0 .\
+\
+Include a detailed discussion in the PR why you want to make a change and how it will benefit other developers and users.\
+\
+We highly recommend uploading a video or photo showing the impact of your changes.\
+\
+\'97\
+\
+If you are introducing a bug fix:\
+\
+Upload a 
+\f1\b video
+\f0\b0  or screenshot of how the current change you introduced implements the iOS device running in the Simulator. We want to see the Simulator running in your video.\
+\
+Example: If you fixed an issue with how cells are dequeued, show a video of the before and after of your changes. Show the simulator running.\
+\
+\'97\
+\
+\
+\
+Here is a guide for adding new public methods:\
+\
+(1) Add a default value for each variable at the top of Table.swift. Variables are recommended to be private.\
+\
+(2) Apply the value wherever it should be used in the TableView (ie. cellForRowAt method, didSelectRow method or anywhere else).\
+\
+(3) Add a setter method to allow users to change the values used by the TableView.\
+\
+(4) Add an appropriate comment using Documentation Compiler to your new method. It should start with /// (three forward slashes).\
+\
+\
+\
+\
+\
+\
+}

@@ -8,8 +8,8 @@ No need to use the UITableViewDelegate and UITableViewDataSource protocols.
 
 Swift Table is a free and open-source library that removes the hundreds of lines of code you need to create a fully-customized TableView.
 
-![](First%20screenshot.png)
-![](Second%20screenshot.png)
+![Image examples of three TableViews](Other/Screenshots/Collection.jpg)
+
 
 
 ## Example:
@@ -45,8 +45,9 @@ table.setAccessory(style: .disclosureIndicator)
 * Supports single and multiple sections of data
 * Can show a subtitle and image label for each cell
 * Provide your own action triggered when a cell is tapped
-* Over 20 public methods to customize most aspects of TableViews - headers, cellHeight, accessories, fonts, colors and much more
+* Over 30 public methods to customize most aspects of TableViews - headers, cellHeight, accessories, fonts, colors and much more
 * Includes support for Documentation Compiler (DocC) to show code documentation and tips as you type
+* Supports Swift Package Manager (SPM). Support for Cocoapods coming soon.
 
 
 ## Benefits:
@@ -60,6 +61,8 @@ table.setAccessory(style: .disclosureIndicator)
 * If you want to show a TableView with one section, insert one array into the **data** parameter or call the .setData() method. If you want to show a TableView with multiple sections, insert a multidimensional array into the **datasets** parameter or call the .setDatasets() method.
 * To perform any changes, try using the  public methods on the Table class. For example: `table.setCellHeight(54.0)` or `table.setTitleColor(color: blue)`
 * To present your own custom class or struct, conform to the ::TableData:: protocol.
+* Open the Example folder to see an Xcode Project showing how to use Swift Table.
+* Current issue: if a TableView is not shown, make sure the Table variable is a global variable (outside of viewDidLoad or any other function) - for reference, see the Example project.
 
 
 ## Created by:
