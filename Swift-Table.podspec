@@ -1,7 +1,7 @@
 
 Pod::Spec.new do |spec|
 
-  spec.name         = "Table"
+  spec.name         = "Swift-Table"
   spec.version      = "1.0"
   spec.summary      = "The fastest and easiest way to present a UITableView - in 3 lines of code."
 
@@ -13,7 +13,7 @@ Pod::Spec.new do |spec|
 
   spec.license      = "MIT"
 
-  spec.author             = { "sivx76" => "sivx76@gmail.com" }
+  spec.author             = { "sivx76" => "sivx76@gmail.com", "jsood6" => "jigyasaasood@gmail.com" }
   spec.social_media_url   = "https://twitter.com/sivx76"
 
 
