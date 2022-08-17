@@ -65,6 +65,11 @@ table.setAccessory(style: .disclosureIndicator)
 * Current issue: if a TableView is not shown, make sure the Table variable is a global variable (outside of viewDidLoad or any other function) - for reference, see the Example project.
 
 
+## Installation:
+* For Swift Package Manager, add this Git link: https://github.com/sivx76/Swift-Table.git
+* For Cocoapods, add this dependency:  ::pod 'Tables'::
+
+
 ## Created by:
 Benyam Alemu Sood and Jigyasaa Alemu Sood, 2022.
 
