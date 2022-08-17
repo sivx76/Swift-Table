@@ -47,7 +47,7 @@ table.setAccessory(style: .disclosureIndicator)
 * Provide your own action triggered when a cell is tapped
 * Over 30 public methods to customize most aspects of TableViews - headers, cellHeight, accessories, fonts, colors and much more
 * Includes support for Documentation Compiler (DocC) to show code documentation and tips as you type
-* Supports Swift Package Manager (SPM). Support for Cocoapods coming soon.
+* Supports Swift Package Manager (SPM) and Cocoapods dependency managers.
 
 
 ## Benefits:
