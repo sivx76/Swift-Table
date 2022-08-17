@@ -1,8 +1,8 @@
 
 Pod::Spec.new do |spec|
 
-  spec.name         = "Swift-Table"
-  spec.version      = "1.0.1"
+  spec.name         = "SwiftTable"
+  spec.version      = "1.0.2"
   spec.summary      = "The fastest and easiest way to present a UITableView - in 3 lines of code."
 
   spec.description  = "The world's simplest, fastest and most customizable TableView. Create a UITableView in 3 lines of code. Powered by Generics. No need to use Table View protocols. Uses UIKit."
