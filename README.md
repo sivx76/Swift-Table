@@ -60,14 +60,14 @@ table.setAccessory(style: .disclosureIndicator)
 ## Quick tips:
 * If you want to show a TableView with one section, insert one array into the **data** parameter or call the .setData() method. If you want to show a TableView with multiple sections, insert a multidimensional array into the **datasets** parameter or call the .setDatasets() method.
 * To perform any changes, try using the  public methods on the Table class. For example: `table.setCellHeight(54.0)` or `table.setTitleColor(color: blue)`
-* To present your own custom class or struct, conform to the ::TableData:: protocol.
+* To present your own custom class or struct, conform to the **`TableData`** protocol.
 * Open the Example folder to see an Xcode Project showing how to use Swift Table.
 * Current issue: if a TableView is not shown, make sure the Table variable is a global variable (outside of viewDidLoad or any other function) - for reference, see the Example project.
 
 
 ## Installation:
-* For Swift Package Manager, add this Git link: https://github.com/sivx76/Swift-Table.git
-* For Cocoapods, add this dependency:  ::pod 'Tables'::
+* For Swift Package Manager, `Add the Package` using this Git link and select the main branch: https://github.com/sivx76/Swift-Table.git
+* For Cocoapods, add this dependency:  `pod 'Tables'`
 
 
 ## Created by:
