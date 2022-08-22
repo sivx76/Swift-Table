@@ -14,7 +14,7 @@ Swift Table is a free and open-source library that removes the hundreds of lines
 
 ## Example:
 ``` swift
-var table = Table(data: [“Home”, “Videos”, “Articles”, “Settings”])
+var table = Table(data: ["Adam", "Juan", "Kate", "Siddharth", "Mary", "Zhao"])
 let tableView = table.show()
 view.addSubview(tableView)
 ```
@@ -68,6 +68,50 @@ table.setAccessory(style: .disclosureIndicator)
 ## Installation:
 * For Swift Package Manager, `Add the Package` using this Git link and select the main branch: https://github.com/sivx76/Swift-Table.git
 * For Cocoapods, add this dependency:  `pod 'Tables'`
+
+
+## Public methods:
+
+Data:
+* append(element: D)
+* insert(element: D, at index: Int)
+* insert(element: D, at index: Int, datasetIndex: Int)
+* removeElement(at index: Int)
+* removeElement(at index: Int, datasetIndex: Int)
+* randomElement() -> D?
+* setData(data: [D])
+* setDatasets(datasets: [[D]])
+* shuffleElements()
+* removeAllElements()
+
+
+Appearance:
+* setTitleFont(font: UIFont)
+* setTitleColor(color: UIColor)
+* setSubtitleFont(font: UIFont)
+* setSubtitleColor(color: UIColor)
+* setImageTint(color: UIColor)
+* setImageFrame(frame: CGRect)
+* setImageContentMode(contentMode: UIView.ContentMode)
+* setHeader(title: String)
+* setHeader(titles: [String])
+* setHeaderView(view: UIView)
+* setFooterView(view: UIView)
+* setAccessory(style: UITableViewCell.AccessoryType)
+* setAccessoryColor(color: UIColor)
+* setCellHeight(height: Float)
+* setSeparatorColor(color: UIColor)
+* setSeparatorInset(edgeInsets: UIEdgeInsets)
+* setKeyboardDismiss(mode: UIScrollView.KeyboardDismissMode)
+* setAction(action: @escaping (IndexPath, D, UITableViewCell)
+* setAccessoryAction(action: @escaping (IndexPath, D, UITableViewCell) -> Void)
+
+
+Access TableView:
+* show() -> UITableView
+* hide()
+* setFrame(frame: CGRect)
+* showFrame() -> CGRect
 
 
 ## Created by:
