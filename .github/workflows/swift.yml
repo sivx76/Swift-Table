@@ -10,10 +10,14 @@ jobs:
   build:
 
     runs-on: macos-latest
-
+    strategy:
+        matrix:
+          destination: ['platform=iOS Simulator,OS=13.2.2,name=iPhone 11 Pro Max']
     steps:
-    - uses: actions/checkout@v3
-    - name: Build
-      run: swift build -v
-    - name: Run tests
-      run: swift test -v
+      - name: Checkout
+        uses: actions/checkout@master
+      - name: Build
+        run: |
+          xcodebuild clean build -project Example.xcodeproj -scheme GHFollowers -destination "${destination}" CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO ONLY_ACTIVE_ARCH=NO
+        env: 
+         destination: ${{ matrix.destination }}
