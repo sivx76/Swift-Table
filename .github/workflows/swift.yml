@@ -25,6 +25,6 @@ jobs:
           xcodebuild clean build
           -project Example/Example.xcodeproj
           -scheme Example
-          -destination 'platform=iOS Simulator,name=iPhone 11,OS=14.0' 
+          -destination 'id=A32E20EE-3BBA-47BB-BC87-718BE51F7090' 
 
 
