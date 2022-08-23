@@ -23,6 +23,6 @@ jobs:
       - name: Build Setup
         run: >-
           xcodebuild test
-          -workspace Example/Example.xcodeproj
+          -project Example/Example.xcodeproj
           -scheme Example
           -destination 'platform=iOS'
