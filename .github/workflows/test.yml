@@ -21,7 +21,4 @@ jobs:
         
       - name: Build Setup
         run: >-    
-          xcodebuild test
-          -project Example/Example.xcodeproj
-          -scheme Example
-          -destination 'platform=iOS Simulator,name=iPhone 11,OS=14.0'
+          xcodebuild test -project Example/Example.xcodeproj -scheme Example -destination 'platform=iOS'
