@@ -22,9 +22,6 @@ jobs:
         
       - name: Build Setup
         run: >-
-          xcodebuild clean build
-          -project Example/Example.xcodeproj
-          -scheme Example
-          -destination 'id=A32E20EE-3BBA-47BB-BC87-718BE51F7090' 
+          swift build
 
 
