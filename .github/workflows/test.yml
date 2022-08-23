@@ -1,4 +1,4 @@
-name: Swift
+name: Build and Test
 
 on:
   push:
@@ -21,8 +21,8 @@ jobs:
         
         
       - name: Build Setup
-        run: >-
+        run: >-    
           xcodebuild test
-          -project Example/Example.xcodeproj
+          -workspace Example/Example.xcodeproj
           -scheme Example
           -destination 'platform=iOS'
