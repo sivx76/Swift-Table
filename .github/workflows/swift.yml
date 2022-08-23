@@ -8,18 +8,21 @@ on:
 
 jobs:
   build:
-
-    runs-on: macos-latest
-    strategy:
-        matrix:
-          destination: ['platform=iOS,OS=14.0,name=iPhone 11']
+    name: Build and Test
+    runs-on: macos-12
+  
     steps:
       - name: Checkout
         uses: actions/checkout@master
         
         
-      - name: Build
-        run: |
-          xcodebuild clean build -project Example/Example.xcodeproj -scheme Example -destination "${destination}" CODE_SIGNING_REQUIRED=NO ONLY_ACTIVE_ARCH=NO
-        env: 
-         destination: ${{ matrix.destination }}
+      - name: Force Xcode 13.2.1
+        run: sudo xcode-select -switch /Applications/Xcode_13.2.1.app
+        
+        
+      - name: Build Setup
+        run: >-
+          xcodebuild test
+          -workspace Example/Example.xcworkspace
+          -scheme Example
+          -destination 'platform=iOS'
