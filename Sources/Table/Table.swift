@@ -17,7 +17,6 @@ import UIKit
 ///
 ///  Conform your custom Struct or Class to the TableData protocol.
 ///
-///  
 ///  ```swift
 ///  var table = Table(data: ["Krishna", "Thomas", "Jodeci", "Susan"])
 ///
@@ -362,6 +361,10 @@ import UIKit
         
         cell.accessoryType = accessory
         cell.tintColor = accessoryColor
+         
+         if element.showCheckmark ?? false {
+             cell.addCheckmark()
+         }
         
         return cell
     }

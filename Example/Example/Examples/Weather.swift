@@ -30,4 +30,10 @@ extension Weather: TableData {
 
     }
     
+    var showCheckmark: Bool? {
+        get {
+            nil
+        }
+    }
+    
 }

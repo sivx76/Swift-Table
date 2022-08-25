@@ -30,4 +30,10 @@ extension Post: TableData {
 
     }
     
+    var showCheckmark: Bool? {
+        get {
+            nil
+        }
+    }
+    
 }

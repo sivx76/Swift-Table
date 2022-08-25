@@ -11,6 +11,8 @@ struct Todo {
     let name: String
     let description: String
     let imageSource: String
+    
+    let checked: Bool?
 }
 
 
@@ -26,6 +28,12 @@ extension Todo: TableData {
     var image: UIImage? {
         return UIImage(systemName: imageSource) ?? nil
 
+    }
+    
+    public var showCheckmark: Bool? {
+        get {
+            return checked
+        }
     }
     
 }

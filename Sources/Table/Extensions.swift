@@ -9,7 +9,7 @@ import UIKit
 
 
 // MARK: - Conforming to TableData
- extension String: TableData {
+extension String: TableData {
      public var title: String {
         get {
             self
@@ -25,6 +25,13 @@ import UIKit
     
     
      public var image: UIImage? {
+        get {
+            nil
+        }
+    }
+    
+    
+    public var showCheckmark: Bool? {
         get {
             nil
         }
@@ -52,6 +59,13 @@ import UIKit
             nil
         }
     }
+     
+     
+     public var showCheckmark: Bool? {
+         get {
+             nil
+         }
+     }
 }
 
 
