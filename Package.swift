@@ -20,6 +20,8 @@ let package = Package(
         // Targets can depend on other targets in this package, and on products in packages this package depends on.
         .target(
             name: "Table",
-            dependencies: []),
+            dependencies: [],
+            exclude: ["Contributors Guide.rtf", "LICENSE", "Opportunties.rtf", "Tables.podspec", "Example", "Other", ".git", ".gitignore"]
+        ),
     ]
 )
