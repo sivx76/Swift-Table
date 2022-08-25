@@ -1,13 +1,11 @@
 ## Why?
-How does this improve the developer experience for our users?
 - 
-
+How does this improve the developer experience for our users?
 
 
 ## Acceptance criteria:
-
-What does a solution need to have?
 - 
+What does a solution need to have?
 
 
 ## Other:
