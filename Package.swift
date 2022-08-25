@@ -21,7 +21,6 @@ let package = Package(
         .target(
             name: "Table",
             dependencies: [],
-            path: "./",
             exclude: ["Contributors Guide.rtf", "LICENSE", "Opportunties.rtf", "Tables.podspec", "Example", "Other", ".git", ".gitignore"]
         ),
     ]
