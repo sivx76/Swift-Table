@@ -86,6 +86,8 @@ Data:
 
 
 Appearance:
+* addStyle(style: @escaping (UITableView, IndexPath, D, UITableViewCell) -> Void)
+* clearStyles()
 * setTitleFont(font: UIFont)
 * setTitleColor(color: UIColor)
 * setSubtitleFont(font: UIFont)
