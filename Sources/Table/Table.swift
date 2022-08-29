@@ -102,6 +102,8 @@ import UIKit
     
     
     // Customize appearance
+     internal var appliedStyles = [((UITableView, IndexPath, D, UITableViewCell) -> Void)]()
+     
     internal var title: String? = nil {
         didSet {
             tableView.reloadData()
@@ -199,10 +201,10 @@ import UIKit
     
     
     /// Builds a TableView with a specific hard-coded Reuse identifier and a specific Frame.
-     public convenience init(datasets: [[D]]) {
+     public convenience init(datasets multipleSections: [[D]]) {
         let generatedIdentifier: String = "ABCD"
         
-        self.init(reuseIdentifier: generatedIdentifier, datasets: datasets)
+        self.init(reuseIdentifier: generatedIdentifier, datasets: multipleSections)
     }
     
     
@@ -217,10 +219,10 @@ import UIKit
     }
     
     /// Builds a TableView with a specific hard-coded Reuse identifier and a specific Frame.
-     public convenience init(reuseIdentifier: String, datasets: [[D]]) {
+     public convenience init(reuseIdentifier: String, datasets multipleSections: [[D]]) {
         let emptyFrame: CGRect = CGRect(x: 0, y: 20, width: 400, height: 800)
         
-        self.init(reuseIdentifier: reuseIdentifier, datasets: datasets, frame: emptyFrame)
+        self.init(reuseIdentifier: reuseIdentifier, datasets: multipleSections, frame: emptyFrame)
     }
     
     
@@ -230,8 +232,9 @@ import UIKit
         self.cellTappedAction = { (index, element, cell) -> Void in
             print("Tapped on element: \(element)")
         }
-        
+                 
         super.init()
+         
         
         self.identifier = reuseIdentifier
         self.dataSource = data
@@ -245,15 +248,15 @@ import UIKit
     
     
     /// Builds a TableView with a specific cellTappedAction() called when each cell is tapped.*
-     public required init(reuseIdentifier: String, datasets: [[D]], frame: CGRect) {
+     public required init(reuseIdentifier: String, datasets multipleSections: [[D]], frame: CGRect) {
         self.cellTappedAction = { (index, element, cell) -> Void in
             print("Tapped on element: \(element)")
         }
-        
+                 
         super.init()
         
         self.identifier = reuseIdentifier
-        self.datasets = datasets
+        self.datasets = multipleSections
         self.frame = frame
         
         registerCell()
@@ -274,8 +277,8 @@ import UIKit
     
     
     /// Builds a TableView with the provided closure called when we tap on each cell.
-     public convenience init(reuseIdentifier: String, datasets: [[D]], frame: CGRect, action: @escaping (IndexPath, D, UITableViewCell) -> Void) {
-        self.init(reuseIdentifier: reuseIdentifier, datasets: datasets, frame: frame)
+     public convenience init(reuseIdentifier: String, datasets multipleSections: [[D]], frame: CGRect, action: @escaping (IndexPath, D, UITableViewCell) -> Void) {
+        self.init(reuseIdentifier: reuseIdentifier, datasets: multipleSections, frame: frame)
         
         self.cellTappedAction = action
     }
@@ -359,13 +362,22 @@ import UIKit
         cell.imageView?.contentMode = imageContentMode
         cell.imageView?.tintColor = imageTint
         
-        cell.accessoryType = accessory
         cell.tintColor = accessoryColor
          
-         if element.showCheckmark ?? false {
-             cell.addCheckmark()
+         
+        // Change the appearance of a specific cell - independent of what the other cells looks like
+         cell.accessoryType = element.accessory ?? accessory
+
+         
+         if appliedStyles.count == 0 { return cell }
+         
+         
+         for style in appliedStyles {
+             style(tableView, indexPath, element, cell)
          }
-        
+         
+         
+
         return cell
     }
     

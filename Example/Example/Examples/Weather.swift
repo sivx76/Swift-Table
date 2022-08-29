@@ -30,7 +30,7 @@ extension Weather: TableData {
 
     }
     
-    var showCheckmark: Bool? {
+    var accessory: UITableViewCell.AccessoryType? {
         get {
             nil
         }

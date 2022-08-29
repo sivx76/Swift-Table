@@ -30,6 +30,24 @@ class ContactListViewController: UIViewController {
         }
         
         
+        // Most flexible of the public methods
+        table.addStyle { tableView, indexPath, element, cell in
+            if indexPath.row % 2 == 0 {
+                cell.backgroundColor = .systemTeal
+                cell.accessoryType = .detailDisclosureButton
+            }
+        }
+        
+        table.addStyle { tableView, indexPath, element, cell in
+            if indexPath.row % 2 == 1 {
+                cell.textLabel?.textColor = .red
+            }
+        }
+        
+        
+        
+                
+        
     }
     
 

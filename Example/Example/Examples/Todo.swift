@@ -12,7 +12,7 @@ struct Todo {
     let description: String
     let imageSource: String
     
-    let checked: Bool?
+    let accessoryType: UITableViewCell.AccessoryType
 }
 
 
@@ -30,9 +30,9 @@ extension Todo: TableData {
 
     }
     
-    public var showCheckmark: Bool? {
+    var accessory: UITableViewCell.AccessoryType? {
         get {
-            return checked
+            return accessoryType
         }
     }
     

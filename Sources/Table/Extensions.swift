@@ -31,7 +31,7 @@ extension String: TableData {
     }
     
     
-    public var showCheckmark: Bool? {
+    public var accessory: UITableViewCell.AccessoryType? {
         get {
             nil
         }
@@ -61,7 +61,7 @@ extension String: TableData {
     }
      
      
-     public var showCheckmark: Bool? {
+     public var accessory: UITableViewCell.AccessoryType? {
          get {
              nil
          }

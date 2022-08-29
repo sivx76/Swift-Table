@@ -64,8 +64,8 @@ import UIKit
     }
     
     /// Replace our ``datasets`` with a new multidimensional Array.
-    public func setDatasets(datasets: [[D]]) {
-        self.datasets = datasets
+    public func setDatasets(datasets multipleSections: [[D]]) {
+        self.datasets = multipleSections
         self.numberOfSections = datasets.count
     }
     
@@ -85,6 +85,17 @@ import UIKit
     
     
     // MARK: - Public methods - Appearance
+     
+     /// Set a custom style to be applied for only a particular element(s) or at a given indexPaths
+     public func addStyle(style: @escaping (UITableView, IndexPath, D, UITableViewCell) -> Void) {
+         self.appliedStyles.append(style)
+     }
+     
+     
+     /// Removes all styles previously set
+     public func clearStyles() {
+         self.appliedStyles = [(UITableView, IndexPath, D, UITableViewCell) -> Void]()
+     }
 
     /// Change the font of titleLabel.
     public func setTitleFont(font: UIFont) {

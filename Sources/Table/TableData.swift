@@ -14,5 +14,5 @@ public protocol TableData {
     var subtitle: String? { get }
     var image: UIImage? { get }
     
-    var showCheckmark: Bool? { get }
+    var accessory: UITableViewCell.AccessoryType? { get }
 }
