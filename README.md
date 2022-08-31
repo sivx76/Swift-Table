@@ -59,7 +59,8 @@ table.setAccessory(style: .disclosureIndicator)
 
 ## Quick tips:
 * If you want to show a TableView with one section, insert one array into the **data** parameter or call the .setData() method. If you want to show a TableView with multiple sections, insert a multidimensional array into the **datasets** parameter or call the .setDatasets() method.
-* To perform any changes, try using the  public methods on the Table class. For example: `table.setCellHeight(54.0)` or `table.setTitleColor(color: blue)`
+* To perform any changes, try using the  public methods on the Table class. For example: `table.setCellHeight(54.0)` or `table.setTitleColor(color: .blue)`
+* If your desired change is not in our public methods, try using `table.addStyle()` - which allows you to customize the TableView and its cells, indexPath and elements directly
 * To present your own custom class or struct, conform to the **`TableData`** protocol.
 * Open the Example folder to see an Xcode Project showing how to use Swift Table.
 * Current issue: if a TableView is not shown, make sure the Table variable is a global variable (outside of viewDidLoad or any other function) - for reference, see the Example project.
@@ -86,8 +87,6 @@ Data:
 
 
 Appearance:
-* addStyle(style: @escaping (UITableView, IndexPath, D, UITableViewCell) -> Void)
-* clearStyles()
 * setTitleFont(font: UIFont)
 * setTitleColor(color: UIColor)
 * setSubtitleFont(font: UIFont)
@@ -107,6 +106,8 @@ Appearance:
 * setKeyboardDismiss(mode: UIScrollView.KeyboardDismissMode)
 * setAction(action: @escaping (IndexPath, D, UITableViewCell)
 * setAccessoryAction(action: @escaping (IndexPath, D, UITableViewCell) -> Void)
+* addStyle(style: @escaping (UITableView, IndexPath, D, UITableViewCell) -> Void)
+* clearStyles()
 
 
 Access TableView:
@@ -124,6 +125,8 @@ Swift Table is a free and opensource library distributed under the **MIT License
 If you would like to, you may create any articles, tutorials or videos describing any component of this library.
 
 Swift Table will always be free to use and openly available.
+
+If this project helps you, consider donating! [Sponsor us here](https://github.com/sponsors/sivx76) to support new innovations for iOS Developers
 
 
 ## Collaboration:
